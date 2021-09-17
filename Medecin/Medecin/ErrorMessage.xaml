@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medecin.ErrorMessage" HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand">
+    <Label Text="Obs. Fyll i alla fälten!" HorizontalOptions="CenterAndExpand"
+           TextColor="Black"/>
+    <Button Text="Stäng" HorizontalOptions="FillAndExpand" BackgroundColor="Red"
+            TextColor="White" VerticalOptions="EndAndExpand" CornerRadius="20"/>
+</StackLayout>

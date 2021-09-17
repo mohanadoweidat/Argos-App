@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medecin.Startsidan2"
+            xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+            xmlns:local="clr-namespace:Medecin"
+            x:Name="ss">
+
+   
+
+    <ContentPage Title="Kalender" Icon="cal.png">
+        <AbsoluteLayout BackgroundColor="Beige">
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <controls:Calendar SelectedDate="{Binding CalenderSelectedDate, Mode=TwoWay}" HorizontalOptions="StartAndExpand"
+                           VerticalOptions="StartAndExpand" x:Name="calender3" 
+                            EnableTitleMonthYearView="True" BackgroundColor="Beige" SelectedBackgroundColor="Brown"/>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage>
+
+
+    <ContentPage Title="Anteckningar" Icon="notes.png">
+     
+
+        <Frame CornerRadius="20" BackgroundColor="Beige">
+            <StackLayout Spacing="20" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+                <Frame Padding="10" CornerRadius="12" IsClippedToBounds="True"
+                           Opacity="0.6" BackgroundColor="WhiteSmoke">
+                    <Label Text="Anteckningar" HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black"/>
+                </Frame>
+                <ScrollView>
+                    <Frame Padding="20" CornerRadius="12" IsClippedToBounds="True"
+                           Opacity="0.6" BackgroundColor="WhiteSmoke" Margin="10,20,10,25">
+                        <StackLayout Margin="0,10,0,15">
+                            <ListView  HasUnevenRows="True"
+                                       Margin="40,80" x:Name="lst"
+                                       SeparatorVisibility="None">
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame CornerRadius="20" OutlineColor="Red">
+                                                
+                                            
+                                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                                <Label Text="{Binding Text}" FontSize="Large" TextColor="Black"></Label>
+                                                <Label Text="{Binding Date}" FontSize="Medium" TextColor="Black"/>
+                                                <Label Text="{Binding Time}" FontSize="Medium" TextColor="Black"/>
+                                                
+                                                <Button Text="Ta bort" Clicked="Button_Clicked"/>
+
+                                            </StackLayout>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                
+                                
+                            </ListView>
+                                       
+                                       
+                        </StackLayout>
+                    </Frame>
+                </ScrollView>
+
+
+            </StackLayout>
+        </Frame>
+
+    </ContentPage>
+   
+</TabbedPage>

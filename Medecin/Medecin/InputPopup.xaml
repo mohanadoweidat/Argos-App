@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medecin.InputPopup" HorizontalOptions="FillAndExpand"
+             VerticalOptions="FillAndExpand" Spacing="10">
+    <Frame CornerRadius="20" OutlineColor="Red" Padding="5">
+        <Entry Placeholder="Anteckning" HorizontalOptions="CenterAndExpand"
+               PlaceholderColor="Black" x:Name="ent"/>
+    </Frame>
+    <TimePicker HorizontalOptions="CenterAndExpand" x:Name="tm"/>
+    <Button Text="Spara" HorizontalOptions="FillAndExpand" TextColor="Black" CornerRadius="20"
+            BackgroundColor="Green" x:Name="btn" Clicked="Btn_Clicked"/>
+    <Button Text="Avbryt" HorizontalOptions="FillAndExpand" TextColor="Black" CornerRadius="20"
+            BackgroundColor="Red" x:Name="cn"/>
+</StackLayout>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Medecin.Startsidan3"
+              xmlns:weatherVm="clr-namespace:Medecin.ViewModels">
+    <ContentPage.BindingContext>
+        <weatherVm:WeatherViewModel/>
+    </ContentPage.BindingContext>
+
+    <Frame CornerRadius="20" Padding="10" BackgroundColor="White">
+        <Frame Padding="0" CornerRadius="20">
+            <StackLayout Padding="20,20,20,20" BackgroundColor="AntiqueWhite">
+                <!---Searchbar-->
+                <Frame Padding="0" BorderColor="Purple" CornerRadius="20">
+                    <SearchBar Text="{Binding City, Mode=OneWayToSource}"
+           Placeholder="Söka efter stad" BackgroundColor="White"
+                           CancelButtonColor="Red"/>
+                </Frame>
+                <ActivityIndicator IsRunning="{Binding IsBusy,Mode=TwoWay}"/>
+
+
+
+
+                <Frame CornerRadius="20" Padding="10" BackgroundColor="White">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="{Binding WeatherMainModel.name}"  FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                            <Image Source="{Binding IconImageString}"
+                   WidthRequest="100"
+                   HeightRequest="150"/>
+
+
+                            <Label Text="{Binding WeatherMainModel.weather[0].main}" FontSize="Large"  HorizontalOptions="CenterAndExpand"/>
+
+                            <Label Text="{Binding WeatherMainModel.weather[0].description}" FontSize="Large"  HorizontalOptions="CenterAndExpand"/>
+
+                            <Label Text="{Binding WeatherMainModel.main.temp}" FontSize="Large"  HorizontalOptions="CenterAndExpand"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </Frame>
+    </Frame>
+</ContentPage>
